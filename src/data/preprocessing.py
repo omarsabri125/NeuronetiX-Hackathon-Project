@@ -116,12 +116,3 @@ def preprocessing_pipline(file_path, smotten=False):
 
     X_train, X_test = scaling(X_train, X_test)
     return X_train, X_test, y_train, y_test
-
-
-# X_train, X_test, y_train, y_test = preprocessing_pipline(
-#     "D:/Churn_Customer/NeuronetiX-Hackathon-Project/assets/Telecom_Customers _Churn_Dataset.csv",smotten=True)
-
-# print(X_train.head())
-# print(X_test.head())
-# print(y_train.head())
-# print(y_test.head())
