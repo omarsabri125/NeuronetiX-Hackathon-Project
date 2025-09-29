@@ -1,9 +1,8 @@
-
 pandas
 numpy
 scipy
 matplotlib
-seaborn
-plotly
-scikit-learn
-xgboost
+seaborn==0.13.2
+plotly==6.3.0
+scikit-learn==1.7.2
+xgboost==3.0.5
