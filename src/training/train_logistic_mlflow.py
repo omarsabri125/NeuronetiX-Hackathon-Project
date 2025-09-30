@@ -54,5 +54,3 @@ if __name__ == '__main__':
 
     # Call the main function
     main(C=args.C, penalty=args.penalty)
-
-# python -m training.train_logistic_mlflow

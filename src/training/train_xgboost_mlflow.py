@@ -57,4 +57,3 @@ if __name__ == '__main__':
     main(n_estimators=args.n_estimators, max_depth=args.max_depth,
          learning_rate=args.learning_rate)
     
-# python -m training.train_xgboost_mlflow

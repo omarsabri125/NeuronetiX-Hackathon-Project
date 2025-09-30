@@ -53,5 +53,3 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     main(n_estimators=args.n_estimators, max_depth=args.max_depth)
-
-# python -m training.train_rf_mlflow
