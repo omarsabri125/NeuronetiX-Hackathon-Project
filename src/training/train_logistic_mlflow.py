@@ -3,6 +3,7 @@ from models import train_logistic_regression
 from data.preprocessing import preprocessing_pipline
 from evaluation.metrics import evaluate_model
 from utils.plotting import plot_confusion_matrix, plot_ROC_AUC
+import argparse
 
 FILE_PATH = "D:/Churn_Customer/NeuronetiX-Hackathon-Project/assets/Telecom_Customers _Churn_Dataset.csv"
 
@@ -43,6 +44,15 @@ def main(C: float, penalty: str):
     train_model(C=C, penalty=penalty,
                 use_smotten=True, plot_name="with_smotten")
 
-main(2.5,"l2")
+
+if __name__ == '__main__':
+    # Take input from user via CLI using argparser library
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--C', '-c', type=float, default=2.5)
+    parser.add_argument('--penalty', '-p', type=str, default=None)
+    args = parser.parse_args()
+
+    # Call the main function
+    main(C=args.C, penalty=args.penalty)
 
 # python -m training.train_logistic_mlflow

@@ -3,6 +3,7 @@ from models import train_random_forest
 from data.preprocessing import preprocessing_pipline
 from evaluation.metrics import evaluate_model
 from utils.plotting import plot_confusion_matrix, plot_ROC_AUC
+import argparse
 
 FILE_PATH = "D:/Churn_Customer/NeuronetiX-Hackathon-Project/assets/Telecom_Customers _Churn_Dataset.csv"
 
@@ -42,8 +43,15 @@ def main(n_estimators: int, max_depth: int):
     # 2. with considering the imabalancing data using smotten
     train_model(n_estimators=n_estimators, max_depth=max_depth,
                 use_smotten=True, plot_name="with_smotten")
-    
 
-main(350, 10)
+
+if __name__ == '__main__':
+    # Take input from user via CLI using argparser library
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--n_estimators', '-n', type=int, default=350)
+    parser.add_argument('--max_depth', '-d', type=int, default=15)
+    args = parser.parse_args()
+
+    main(n_estimators=args.n_estimators, max_depth=args.max_depth)
 
 # python -m training.train_rf_mlflow
