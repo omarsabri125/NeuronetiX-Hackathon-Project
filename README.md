@@ -1,5 +1,10 @@
 # Customer Churn Prediction - Telecom Dataset
 
+<p float="left">
+  <img src="assets/1.png" width="500" />
+  <img src="assets/2.png" width="500" />
+</p>
+
 ## 📄 Project Overview
 
 This project focuses on predicting customer churn using machine learning techniques on a telecom dataset. The workflow includes data preprocessing, exploratory data analysis (EDA), feature engineering, model building, evaluation, and hyperparameter tuning.
