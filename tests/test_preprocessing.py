@@ -4,7 +4,8 @@ from src.data.preprocessing import preprocessing_pipline
 def test_preprocessing_output_shape():
     """Ensure preprocessing returns valid data shapes."""
 
-    FILE_PATH = "assets/Telecom_Customers_Churn_Dataset.csv"
+    FILE_PATH = "assets/Telecom_Customers _Churn_Dataset.csv"
+  
 
     assert os.path.exists(FILE_PATH), f"❌ Dataset not found at {FILE_PATH}"
 
