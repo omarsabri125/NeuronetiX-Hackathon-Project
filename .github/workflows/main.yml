@@ -4,3 +4,12 @@ on:
   push:
     branches:
       - main
+
+jobs:
+  build:
+    runs_on: ubuntu-latest
+  
+    
+    steps:
+      - name: Print a welcome message
+        run: echo "Welcome to our first github action workflow!"
