@@ -10,7 +10,6 @@ import argparse
 
 FILE_PATH = "assets/Telecom_Customers _Churn_Dataset.csv"
 
-FILE_PATH = "assets/Telecom_Customers _Churn_Dataset.csv"
 
 
 def train_model(n_estimators, max_depth, use_smotten, plot_name):

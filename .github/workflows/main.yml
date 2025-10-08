@@ -43,3 +43,12 @@ jobs:
 
       - name: List repository files
         run: ls -la
+      
+      - name: Set up MLflow
+        run: |
+          pip install mlflow
+
+      - name: Run MLflow experiment
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          mlflow run . -e forest -P n_estimators=350 -P max_depth=15
