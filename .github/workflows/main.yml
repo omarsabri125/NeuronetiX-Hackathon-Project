@@ -24,7 +24,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install mlflow pytest flake8
+          pip install mlflow pytest flake8 autopep8
+      
+      - name: Auto-format code
+        run: autopep8 --in-place --recursive src
 
       - name: Lint code
         run: flake8 src/
