@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      
   pull_request:
     branches:
       - main
@@ -21,6 +20,21 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install mlflow pytest flake8
+
+      - name: Lint code
+        run: flake8 src/
+      
+      - name: Run tests
+        run: pytest tests/
+
+      - name: Train Random Forest model
+        run: |
+          python src/training/train_rf_mlflow.py --n_estimators 350 --max_depth 15
 
       - name: List repository files
         run: ls -la
