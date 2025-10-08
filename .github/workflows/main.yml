@@ -4,12 +4,16 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "src/**"
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
   
-    
     steps:
       - name: Print a welcome message
         run: echo "Welcome to our first github action workflow!"
@@ -19,3 +23,5 @@ jobs:
       
       - name: List repository files
         run: ls -la
+      
+
