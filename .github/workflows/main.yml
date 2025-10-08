@@ -33,7 +33,9 @@ jobs:
         run: flake8 src/ || echo "⚠️ Lint warnings found, skipping failure"
       
       - name: Run tests
-        run: pytest tests/
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          pytest tests/
 
       - name: Train Random Forest model
         run: |
