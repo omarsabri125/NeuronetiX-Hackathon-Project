@@ -7,7 +7,7 @@ from evaluation.metrics import evaluate_model
 from utils.plotting import plot_confusion_matrix, plot_ROC_AUC
 import argparse
 
-FILE_PATH = "D:/Churn_Customer/NeuronetiX-Hackathon-Project/assets/Telecom_Customers _Churn_Dataset.csv"
+FILE_PATH = "assets/Telecom_Customers _Churn_Dataset.csv"
 
 
 def train_model(n_estimators, max_depth, use_smotten, plot_name):
