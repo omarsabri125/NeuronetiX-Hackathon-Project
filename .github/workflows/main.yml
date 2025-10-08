@@ -1,0 +1,6 @@
+name: ML CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
