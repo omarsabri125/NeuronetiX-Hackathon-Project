@@ -39,7 +39,7 @@ jobs:
 
       - name: Train Random Forest model
         run: |
-          python src/training/train_rf_mlflow.py --n_estimators 350 --max_depth 15
+          python -m src.training.train_rf_mlflow --n_estimators 350 --max_depth 15
 
       - name: List repository files
         run: ls -la
