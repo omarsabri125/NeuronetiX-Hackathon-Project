@@ -1,9 +1,14 @@
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
 import mlflow
-from models import train_random_forest
-from data.preprocessing import preprocessing_pipline
-from evaluation.metrics import evaluate_model
-from utils.plotting import plot_confusion_matrix, plot_ROC_AUC
+from src.models import train_random_forest
+from src.data.preprocessing import preprocessing_pipline
+from src.evaluation.metrics import evaluate_model
+from src.utils.plotting import plot_confusion_matrix, plot_ROC_AUC
 import argparse
+
+FILE_PATH = "assets/Telecom_Customers _Churn_Dataset.csv"
 
 FILE_PATH = "assets/Telecom_Customers _Churn_Dataset.csv"
 
