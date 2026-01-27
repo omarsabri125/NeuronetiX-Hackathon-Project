@@ -1,4 +1,4 @@
 /scaler.pkl
 /label_encoders.pkl
-/logistic_model.pkl
-/random_forest_model.pkl
+/logistic_regression.pkl
+/random_forest.pkl
