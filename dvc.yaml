@@ -1,0 +1,20 @@
+stages:
+  prepare:
+    cmd: python -m src.data.preprocessing 
+    deps:
+      - src/data/preprocessing.py
+    params:
+      - prepare
+    outs:
+      - data/processed/with_smoteenn/X_train.csv
+      - data/processed/with_smoteenn/X_test.csv
+      - data/processed/with_smoteenn/y_train.csv
+      - data/processed/with_smoteenn/y_test.csv
+      - models/with_smoteenn/scaler.pkl
+      - models/with_smoteenn/label_encoders.pkl
+      - data/processed/without_smoteenn/X_train.csv
+      - data/processed/without_smoteenn/X_test.csv
+      - data/processed/without_smoteenn/y_train.csv
+      - data/processed/without_smoteenn/y_test.csv
+      - models/without_smoteenn/scaler.pkl
+      - models/without_smoteenn/label_encoders.pkl
