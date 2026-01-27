@@ -1,0 +1,42 @@
+prepare:
+  input_file:  assets/Telecom_Customers_Churn_Dataset.csv
+  output_dir: data/processed
+  test_size: 0.2
+  random_state: 42
+  use_smoteenn: false  # Set to true to enable SMOTEENN balancing
+  drop_columns:
+    - customerID
+    - PhoneService
+    - gender
+    - StreamingTV
+    - StreamingMovies
+    - MultipleLines
+  target_column: Churn
+  
+train:
+  model_types:
+    - random_forest
+    - logistic_regression
+    - xgboost
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+    min_samples_split: 5
+    random_state: 42
+  logistic_regression:
+    C: 2.5
+    penalty: l2
+    random_state: 42
+  xgboost:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.1
+    random_state: 42
+
+evaluate:
+  threshold: 0.5
+
+mlflow:
+  experiment_name: customer_churn_prediction
+  tracking_uri: ./mlruns
+  run_name: null
