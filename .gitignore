@@ -7,7 +7,6 @@ __pycache__/
 # DVC
 /data/raw/customers.csv
 /data/processed/
-/models/*.pkl
 
 # MLflow
 /mlruns/
