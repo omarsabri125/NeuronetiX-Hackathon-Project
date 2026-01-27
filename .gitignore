@@ -33,6 +33,5 @@ Thumbs.db
 *.log
 confusion_matrix.png
 tests/
-models/
 __pycache__/
 *.pyc
