@@ -1,1 +1,34 @@
 .github
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# DVC
+/data/raw/customers.csv
+/data/processed/
+/models/*.pkl
+
+# MLflow
+/mlruns/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Environment
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Outputs
+*.log
+confusion_matrix.png
