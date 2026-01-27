@@ -132,3 +132,64 @@ stages:
       hash: md5
       md5: c2a36f468fcfa44d861b5fd7b045dd3e
       size: 1124
+  train_random_forest:
+    cmd: python -m src.training.train_rf_mlflow --n_estimators 200 --max_depth 
+      10
+    deps:
+    - path: data/processed/with_smoteenn/X_test.csv
+      hash: md5
+      md5: a075b29eae0ca21c5383407f0f5b218b
+      size: 115665
+    - path: data/processed/with_smoteenn/X_train.csv
+      hash: md5
+      md5: f7fea813c6c12cb0771b569ca8705bc1
+      size: 384131
+    - path: data/processed/with_smoteenn/y_test.csv
+      hash: md5
+      md5: e958151f165f7f472b725188c9e97a20
+      size: 4234
+    - path: data/processed/with_smoteenn/y_train.csv
+      hash: md5
+      md5: ad6a1f3af6d01f9c8a90d19bd2879650
+      size: 14032
+    - path: data/processed/without_smoteenn/X_test.csv
+      hash: md5
+      md5: 6b539011b76de433c62fcb7cd2cf9103
+      size: 115076
+    - path: data/processed/without_smoteenn/X_train.csv
+      hash: md5
+      md5: 77865c883acd73d30dd7ad7118f9e1bb
+      size: 460252
+    - path: data/processed/without_smoteenn/y_test.csv
+      hash: md5
+      md5: e958151f165f7f472b725188c9e97a20
+      size: 4234
+    - path: data/processed/without_smoteenn/y_train.csv
+      hash: md5
+      md5: f597c5156799e0428077438ebc926949
+      size: 16909
+    - path: src/evaluation/metrics.py
+      hash: md5
+      md5: 07d1653b5205dd18a8748e1e6d1fbd81
+      size: 547
+    - path: src/models/random_forest_model.py
+      hash: md5
+      md5: 55d7209f2d5ef178d5982da161b82c7a
+      size: 426
+    - path: src/training/train_rf_mlflow.py
+      hash: md5
+      md5: 2f39694e2c9ba0bb814b618abf2bc1a4
+      size: 2173
+    - path: src/utils/plotting.py
+      hash: md5
+      md5: 8f1c0cc2a82e040acbfe8028bb0ee475
+      size: 1575
+    outs:
+    - path: models/with_smoteenn/random_forest.pkl
+      hash: md5
+      md5: 6b819d49f088baa6664344eaeeec114f
+      size: 7553547
+    - path: models/without_smoteenn/random_forest.pkl
+      hash: md5
+      md5: 9862e5bac720737e5e63b99e5de93cc5
+      size: 12206218
