@@ -18,3 +18,23 @@ stages:
       - data/processed/without_smoteenn/y_test.csv
       - models/without_smoteenn/scaler.pkl
       - models/without_smoteenn/label_encoders.pkl
+  
+  train_logistic_regression:
+    cmd: python -m src.training.train_logistic_mlflow --C 2.5 --penalty l2
+    deps:
+      - src/training/train_logistic_mlflow.py
+      - src/models/logistic_model.py
+      - src/evaluation/metrics.py
+      - src/utils/plotting.py
+      - data/processed/with_smoteenn/X_train.csv
+      - data/processed/with_smoteenn/X_test.csv
+      - data/processed/with_smoteenn/y_train.csv
+      - data/processed/with_smoteenn/y_test.csv
+      - data/processed/without_smoteenn/X_train.csv
+      - data/processed/without_smoteenn/X_test.csv
+      - data/processed/without_smoteenn/y_train.csv
+      - data/processed/without_smoteenn/y_test.csv
+    outs:
+      - models/with_smoteenn/logistic_regression.pkl
+      - models/without_smoteenn/logistic_regression.pkl
+    
