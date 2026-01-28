@@ -56,3 +56,22 @@ stages:
     outs:
       - models/with_smoteenn/random_forest.pkl
       - models/without_smoteenn/random_forest.pkl
+  
+  train_xgboost:
+    cmd: python -m src.training.train_xgboost_mlflow --n_estimators 200 --learning_rate 0.1 --max_depth 10
+    deps:
+      - src/training/train_xgboost_mlflow.py
+      - src/models/xgboost_model.py
+      - src/evaluation/metrics.py
+      - src/utils/plotting.py
+      - data/processed/with_smoteenn/X_train.csv
+      - data/processed/with_smoteenn/X_test.csv
+      - data/processed/with_smoteenn/y_train.csv
+      - data/processed/with_smoteenn/y_test.csv
+      - data/processed/without_smoteenn/X_train.csv
+      - data/processed/without_smoteenn/X_test.csv
+      - data/processed/without_smoteenn/y_train.csv
+      - data/processed/without_smoteenn/y_test.csv
+    outs:
+      - models/with_smoteenn/xgboost_model.pkl
+      - models/without_smoteenn/xgboost_model.pkl
