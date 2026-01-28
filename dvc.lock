@@ -193,3 +193,64 @@ stages:
       hash: md5
       md5: 9862e5bac720737e5e63b99e5de93cc5
       size: 12206218
+  train_xgboost:
+    cmd: python -m src.training.train_xgboost_mlflow --n_estimators 200 
+      --learning_rate 0.1 --max_depth 10
+    deps:
+    - path: data/processed/with_smoteenn/X_test.csv
+      hash: md5
+      md5: b8c1fe37e0eab2fbb63dfa3920fb62e5
+      size: 115775
+    - path: data/processed/with_smoteenn/X_train.csv
+      hash: md5
+      md5: 5e9303177be0a956a81d732e343e04f4
+      size: 382410
+    - path: data/processed/with_smoteenn/y_test.csv
+      hash: md5
+      md5: e958151f165f7f472b725188c9e97a20
+      size: 4234
+    - path: data/processed/with_smoteenn/y_train.csv
+      hash: md5
+      md5: dc44d7704708d7fe7b2365af69afc084
+      size: 13972
+    - path: data/processed/without_smoteenn/X_test.csv
+      hash: md5
+      md5: 6b539011b76de433c62fcb7cd2cf9103
+      size: 115076
+    - path: data/processed/without_smoteenn/X_train.csv
+      hash: md5
+      md5: 77865c883acd73d30dd7ad7118f9e1bb
+      size: 460252
+    - path: data/processed/without_smoteenn/y_test.csv
+      hash: md5
+      md5: e958151f165f7f472b725188c9e97a20
+      size: 4234
+    - path: data/processed/without_smoteenn/y_train.csv
+      hash: md5
+      md5: f597c5156799e0428077438ebc926949
+      size: 16909
+    - path: src/evaluation/metrics.py
+      hash: md5
+      md5: 07d1653b5205dd18a8748e1e6d1fbd81
+      size: 547
+    - path: src/models/xgboost_model.py
+      hash: md5
+      md5: 61404f0b7d55318aa88520acdbda0f4d
+      size: 385
+    - path: src/training/train_xgboost_mlflow.py
+      hash: md5
+      md5: 20d64c69168321be012c96cd6d8bf00e
+      size: 2560
+    - path: src/utils/plotting.py
+      hash: md5
+      md5: 8f1c0cc2a82e040acbfe8028bb0ee475
+      size: 1575
+    outs:
+    - path: models/with_smoteenn/xgboost_model.pkl
+      hash: md5
+      md5: 2b1320d5fcc95f1112acdae6015f2670
+      size: 842674
+    - path: models/without_smoteenn/xgboost_model.pkl
+      hash: md5
+      md5: fc3d3d7dd90e854cd1a3a30bcadb0f68
+      size: 1432654
