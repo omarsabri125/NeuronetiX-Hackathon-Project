@@ -34,3 +34,4 @@ confusion_matrix.png
 tests/
 __pycache__/
 *.pyc
+/metrics.jsonl
