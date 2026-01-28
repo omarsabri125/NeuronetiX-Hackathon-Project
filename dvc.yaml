@@ -75,3 +75,20 @@ stages:
     outs:
       - models/with_smoteenn/xgboost_model.pkl
       - models/without_smoteenn/xgboost_model.pkl
+  
+  evaluate:
+    cmd: python -m src.evaluation.models_evaluation
+    deps:
+      - src/evaluation/models_evaluation.py
+      - models/with_smoteenn/logistic_regression.pkl
+      - models/without_smoteenn/logistic_regression.pkl
+      - models/with_smoteenn/random_forest.pkl
+      - models/without_smoteenn/random_forest.pkl
+      - models/with_smoteenn/xgboost_model.pkl
+      - models/without_smoteenn/xgboost_model.pkl
+      - data/processed/with_smoteenn/X_test.csv
+      - data/processed/with_smoteenn/y_test.csv
+      - data/processed/without_smoteenn/X_test.csv
+      - data/processed/without_smoteenn/y_test.csv
+    outs:
+      - metrics.jsonl
