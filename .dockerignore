@@ -1,0 +1,27 @@
+# Git
+.git
+.gitignore
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Envs
+.env
+.venv
+venv/
+
+# ML artifacts
+models/
+data/
+dvc.lock
+.dvc/cache
+
+# Logs
+*.log
+
+# Notebooks
+*.ipynb
+mlruns

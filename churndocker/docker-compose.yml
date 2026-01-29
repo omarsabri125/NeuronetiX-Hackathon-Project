@@ -1,0 +1,18 @@
+services:
+  fastapi-churn:
+    build:
+      context: ..
+      dockerfile: churndocker/Dockerfile
+    container_name: fastapi-churn
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../models:/app/models
+      - ../params.yaml:/app/params.yaml
+    networks:
+      - backend
+    restart: always
+
+networks:
+  backend:
+    driver: bridge
