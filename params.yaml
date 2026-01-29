@@ -12,6 +12,7 @@ prepare:
     - StreamingMovies
     - MultipleLines
   target_column: Churn
+  app_name: churn_prediction_app
   
 train:
   model_types:
