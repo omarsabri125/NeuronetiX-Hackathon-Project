@@ -30,3 +30,8 @@ jobs:
           file: ./churndocker/Dockerfile  # change if your Dockerfile has a different name or path
           push: true
           tags: omarsabri12/churn-fastapi:latest
+          
+      - name: Inspect Docker image files
+        run: |
+          echo "Listing files in /app inside the container"
+          docker run --rm omarsabri12/churn-fastapi:latest find /app
