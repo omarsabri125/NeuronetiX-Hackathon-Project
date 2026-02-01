@@ -10,7 +10,7 @@ base_router = APIRouter(
 logger = logging.getLogger("uvicorn.error")
 
 def get_params():
-    with open("params.yaml", "r") as f:
+    with open("/app/params.yaml", "r") as f:
         params = yaml.safe_load(f)
     return params
 

@@ -1,15 +1,18 @@
 from fastapi import FastAPI
 from .routes.base import base_router
 from .routes.predict import predict_router
+from .utils.metrics import setup_metrics
 import pickle
 
 app = FastAPI(title="Churn Prediction API")
 
+setup_metrics(app)
+
 async def startup_span():
 
-    model_path = "models/without_smoteenn/random_forest.pkl"
-    label_encoders_path = "models/without_smoteenn/label_encoders.pkl"
-    scaler_path = "models/without_smoteenn/scaler.pkl"
+    model_path = "/app/models/without_smoteenn/random_forest.pkl"
+    label_encoders_path = "/app/models/without_smoteenn/label_encoders.pkl"
+    scaler_path = "/app/models/without_smoteenn/scaler.pkl"
 
     with open(model_path, 'rb') as f:
         app.model = pickle.load(f)
