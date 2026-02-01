@@ -19,10 +19,12 @@ COPY requirements.txt .
 
 RUN uv pip install -r requirements.txt --system
 
+COPY params.yaml .
+
 COPY src/ ./src/
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
 
-CMD ["python", "-m", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "3000"]
+CMD ["python", "-m", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "5000"]
