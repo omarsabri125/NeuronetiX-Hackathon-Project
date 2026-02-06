@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-churn
+  labels:
+    app: fastapi-churn
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fastapi-churn
+  template:
+    metadata:
+      labels:
+        app: fastapi-churn
+    spec:
+      containers:
+        - name: fastapi-churn
+          image: omarsabri12/churn-fastapi:latest
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: models-storage
+              mountPath: /app/models
+      volumes:
+        - name: models-storage
+          persistentVolumeClaim:
+            claimName: models-pvc

@@ -1,0 +1,7 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  extraMounts:
+  - hostPath: /mnt/d/Churn_Customer/NeuronetiX-Hackathon-Project/models
+    containerPath: /data/models
