@@ -23,23 +23,24 @@ stages:
           - StreamingMovies
           - MultipleLines
           target_column: Churn
+          app_name: churn_prediction_app
     outs:
     - path: data/processed/with_smoteenn/X_test.csv
       hash: md5
-      md5: b8c1fe37e0eab2fbb63dfa3920fb62e5
-      size: 115775
+      md5: 08ffa939386a64fbcf3dd842c5004146
+      size: 110548
     - path: data/processed/with_smoteenn/X_train.csv
       hash: md5
-      md5: 5e9303177be0a956a81d732e343e04f4
-      size: 382410
+      md5: 204e3ea10f5227b3a897f00e8ad88d93
+      size: 366335
     - path: data/processed/with_smoteenn/y_test.csv
       hash: md5
       md5: e958151f165f7f472b725188c9e97a20
       size: 4234
     - path: data/processed/with_smoteenn/y_train.csv
       hash: md5
-      md5: dc44d7704708d7fe7b2365af69afc084
-      size: 13972
+      md5: a87f119e4a0bd04f5661b8732c57b9a3
+      size: 13957
     - path: data/processed/without_smoteenn/X_test.csv
       hash: md5
       md5: 6b539011b76de433c62fcb7cd2cf9103
@@ -62,7 +63,7 @@ stages:
       size: 93868
     - path: models/with_smoteenn/scaler.pkl
       hash: md5
-      md5: 2f9a7ea29d302c5468cfa7db9fdabf2f
+      md5: 2862633ee301e2fb4a5d5b089f7d4044
       size: 570
     - path: models/without_smoteenn/label_encoders.pkl
       hash: md5
@@ -77,20 +78,20 @@ stages:
     deps:
     - path: data/processed/with_smoteenn/X_test.csv
       hash: md5
-      md5: b8c1fe37e0eab2fbb63dfa3920fb62e5
-      size: 115775
+      md5: 08ffa939386a64fbcf3dd842c5004146
+      size: 110548
     - path: data/processed/with_smoteenn/X_train.csv
       hash: md5
-      md5: 5e9303177be0a956a81d732e343e04f4
-      size: 382410
+      md5: 204e3ea10f5227b3a897f00e8ad88d93
+      size: 366335
     - path: data/processed/with_smoteenn/y_test.csv
       hash: md5
       md5: e958151f165f7f472b725188c9e97a20
       size: 4234
     - path: data/processed/with_smoteenn/y_train.csv
       hash: md5
-      md5: dc44d7704708d7fe7b2365af69afc084
-      size: 13972
+      md5: a87f119e4a0bd04f5661b8732c57b9a3
+      size: 13957
     - path: data/processed/without_smoteenn/X_test.csv
       hash: md5
       md5: 6b539011b76de433c62fcb7cd2cf9103
@@ -126,7 +127,7 @@ stages:
     outs:
     - path: models/with_smoteenn/logistic_regression.pkl
       hash: md5
-      md5: abc0f6cff670354c4f788a31e26fd1e3
+      md5: c8db0af08d1097c7d61c0e23886efe23
       size: 1124
     - path: models/without_smoteenn/logistic_regression.pkl
       hash: md5
@@ -138,20 +139,20 @@ stages:
     deps:
     - path: data/processed/with_smoteenn/X_test.csv
       hash: md5
-      md5: b8c1fe37e0eab2fbb63dfa3920fb62e5
-      size: 115775
+      md5: 08ffa939386a64fbcf3dd842c5004146
+      size: 110548
     - path: data/processed/with_smoteenn/X_train.csv
       hash: md5
-      md5: 5e9303177be0a956a81d732e343e04f4
-      size: 382410
+      md5: 204e3ea10f5227b3a897f00e8ad88d93
+      size: 366335
     - path: data/processed/with_smoteenn/y_test.csv
       hash: md5
       md5: e958151f165f7f472b725188c9e97a20
       size: 4234
     - path: data/processed/with_smoteenn/y_train.csv
       hash: md5
-      md5: dc44d7704708d7fe7b2365af69afc084
-      size: 13972
+      md5: a87f119e4a0bd04f5661b8732c57b9a3
+      size: 13957
     - path: data/processed/without_smoteenn/X_test.csv
       hash: md5
       md5: 6b539011b76de433c62fcb7cd2cf9103
@@ -187,8 +188,8 @@ stages:
     outs:
     - path: models/with_smoteenn/random_forest.pkl
       hash: md5
-      md5: 2cb56a7130d0faaca2b54131e2ce8098
-      size: 7302978
+      md5: 2a687392226fbea0a6fd88ff51e95166
+      size: 7202489
     - path: models/without_smoteenn/random_forest.pkl
       hash: md5
       md5: 9862e5bac720737e5e63b99e5de93cc5
@@ -199,20 +200,20 @@ stages:
     deps:
     - path: data/processed/with_smoteenn/X_test.csv
       hash: md5
-      md5: b8c1fe37e0eab2fbb63dfa3920fb62e5
-      size: 115775
+      md5: 08ffa939386a64fbcf3dd842c5004146
+      size: 110548
     - path: data/processed/with_smoteenn/X_train.csv
       hash: md5
-      md5: 5e9303177be0a956a81d732e343e04f4
-      size: 382410
+      md5: 204e3ea10f5227b3a897f00e8ad88d93
+      size: 366335
     - path: data/processed/with_smoteenn/y_test.csv
       hash: md5
       md5: e958151f165f7f472b725188c9e97a20
       size: 4234
     - path: data/processed/with_smoteenn/y_train.csv
       hash: md5
-      md5: dc44d7704708d7fe7b2365af69afc084
-      size: 13972
+      md5: a87f119e4a0bd04f5661b8732c57b9a3
+      size: 13957
     - path: data/processed/without_smoteenn/X_test.csv
       hash: md5
       md5: 6b539011b76de433c62fcb7cd2cf9103
@@ -248,8 +249,8 @@ stages:
     outs:
     - path: models/with_smoteenn/xgboost_model.pkl
       hash: md5
-      md5: 2b1320d5fcc95f1112acdae6015f2670
-      size: 842674
+      md5: 9f41a00ebc3fd23162b8278bf949520c
+      size: 814181
     - path: models/without_smoteenn/xgboost_model.pkl
       hash: md5
       md5: fc3d3d7dd90e854cd1a3a30bcadb0f68
@@ -259,8 +260,8 @@ stages:
     deps:
     - path: data/processed/with_smoteenn/X_test.csv
       hash: md5
-      md5: b8c1fe37e0eab2fbb63dfa3920fb62e5
-      size: 115775
+      md5: 08ffa939386a64fbcf3dd842c5004146
+      size: 110548
     - path: data/processed/with_smoteenn/y_test.csv
       hash: md5
       md5: e958151f165f7f472b725188c9e97a20
@@ -275,16 +276,16 @@ stages:
       size: 4234
     - path: models/with_smoteenn/logistic_regression.pkl
       hash: md5
-      md5: abc0f6cff670354c4f788a31e26fd1e3
+      md5: c8db0af08d1097c7d61c0e23886efe23
       size: 1124
     - path: models/with_smoteenn/random_forest.pkl
       hash: md5
-      md5: 2cb56a7130d0faaca2b54131e2ce8098
-      size: 7302978
+      md5: 2a687392226fbea0a6fd88ff51e95166
+      size: 7202489
     - path: models/with_smoteenn/xgboost_model.pkl
       hash: md5
-      md5: 2b1320d5fcc95f1112acdae6015f2670
-      size: 842674
+      md5: 9f41a00ebc3fd23162b8278bf949520c
+      size: 814181
     - path: models/without_smoteenn/logistic_regression.pkl
       hash: md5
       md5: c2a36f468fcfa44d861b5fd7b045dd3e
@@ -304,5 +305,5 @@ stages:
     outs:
     - path: metrics.jsonl
       hash: md5
-      md5: b385b77a0d5de6ec1b71c81ded32d46c
-      size: 2001
+      md5: 678101343f1ca193d3fb01cb387c3e18
+      size: 2011
